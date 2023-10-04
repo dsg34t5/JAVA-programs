@@ -1,0 +1,29 @@
+import java.util.Scanner;
+import java.util.Arrays;
+public class mthmaxandnthmininarray {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("enter the size of the array: ");
+        int size=sc.nextInt();
+        int[] arr = new int[size];
+        System.out.println("enter the array elements");
+        for(int i=0;i<size;i++){
+            arr[i]=sc.nextInt();
+        }
+        System.out.println("enter the value of m(for mth maximum):");
+        int m = sc.nextInt();
+        System.out.println("enter the value of n(for nth minimum): ");
+        int n = sc.nextInt();
+        Arrays.sort(arr);
+        if(m<0 || n<=0|| m>size || n>size){
+            System.out.println("invalid values of m and n. they should be within the range[1,"+size+"]");
+        }
+        else{
+            int mthMax =arr[size-m];
+            int nthmin = arr[n-1];
+            System.out.println("the"+m+"th maximum element is:"+ mthMax);
+            System.out.println("the"+n+"th minimum element is:"+ nthmin);
+        }
+        
+    }
+}
