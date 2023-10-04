@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class mergearray{
+     public static void main(String []args){
+         int len,i,j,x=0;
+         Scanner sc=new Scanner(System.in);
+         System.out.println("enter  array size: ");
+         len=sc.nextInt();
+         int arr[]=new int[len];
+         int c[]=new int[12];
+         System.out.println("enter array elements:");
+         for(i=0;i<len;i++)
+         {
+           arr[i]=sc.nextInt();
+         }
+         for(i=0;i<len;i++)
+         {
+             for(j=i+1;j<len;j++)
+             {
+                 if(arr[i]==arr[j])
+                 {
+                    c[x++]=arr[j];
+                 }
+             }
+         }
+         System.out.println("duplicate elements in array are:");
+         for(i=0;i<x;i++)
+         {
+             System.out.print(c[i]+" ");
+         }
+         
+}
+}
