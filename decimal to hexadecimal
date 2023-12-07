@@ -1,0 +1,27 @@
+import java.util.Scanner;
+public class DecimalToHexadecimalSimple {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a decimal number: ");
+        int decimalNumber = scanner.nextInt();
+        StringBuilder hexadecimal = new StringBuilder();
+        while (decimalNumber > 0) {
+            int remainder = decimalNumber % 16;
+            char hexDigit = getHexDigit(remainder);
+            hexadecimal.insert(0, hexDigit);
+            decimalNumber /= 16;
+        }
+        if (hexadecimal.length() == 0) {
+            hexadecimal.append('0');
+        }
+        System.out.println("Hexadecimal equivalent: " + hexadecimal.toString());
+        scanner.close();
+    }
+    private static char getHexDigit(int value) {
+        if (value < 10) {
+            return (char) ('0' + value);
+        } else {
+            return (char) ('A' + (value - 10));
+        }
+    }
+}
