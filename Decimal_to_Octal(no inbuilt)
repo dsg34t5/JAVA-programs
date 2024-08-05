@@ -1,0 +1,20 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a decimal number: ");
+        int num = sc.nextInt();
+        int originalDecimal = num;
+        int[] octal = new int[32];
+        int ind = 0;
+        while (num > 0) {
+            octal[ind++] = num%8;
+            num=num/8;
+        }
+        System.out.print("The octal representation of "+originalDecimal + " is: ");
+        for (int i=ind-1; i>=0; i--) {
+            System.out.print(octal[i]);
+        }
+        System.out.println();
+    }
+}
